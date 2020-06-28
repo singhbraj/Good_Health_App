@@ -1,38 +1,213 @@
+
 .App {
+  font-family: sans-serif;
+}
+
+h1 {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+form {
+  max-width: 500px;
+  width: 100%;
+  margin: 0 auto;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+label,
+input {
+  display: block;
+  width: 100%;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+label {
+  margin-bottom: 5px;
+  height: 22px;
+}
+
+input {
+  margin-bottom: 20px;
+  padding: 10px;
+  border-radius: 3px;
+  border: 1px solid #777;
+}
+
+input.error {
+  border-color: red;
+}
+
+.input-feedback {
+  color: rgb(235, 54, 54);
+  margin-top: -15px;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+button {
+  padding: 10px 15px;
+  background-color: rgb(70, 153, 179);
+  color: white;
+  border: 1px solid rgb(70, 153, 179);
+  background-color: 250ms;
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: white;
+  color: rgb(70, 153, 179);
+}
+
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --primaryColor: #af9a7d;
+  --mainWhite: #fff;
+  --offWhite: #f7f7f7;
+  --mainBlack: #222;
+  --mainGrey: #ececec;
+  --darkGrey: #cfcfcf;
+  --mainTransition: all 0.3s linear;
+  --mainSpacing: 3px;
+  --lightShadow: 2px 5px 3px 0px rgba(0, 0, 0, 0.5);
+  --darkShadow: 4px 10px 5px 0px rgba(0, 0, 0, 0.5);
+}
+/* globals */
+
+
+.box{
+  width: 300px;
+  padding: 40px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  background: #191919;
+  text-align: center;
+}
+.box h1{
+  color: white;
+  text-transform: uppercase;
+  font-weight: 500;
+   
+}
+
+.box input[type="text"],.box input[type="password"]{
+  border: 0;
+  background: none;
+  display: block;
+  margin: 20px auto;
+  text-align: center;
+  border:2px solid #3498db;
+  padding: 14px 10px;
+  width:200px;
+  outline: none;
+  color: white;
+  border-radius: 24px;
+  transition: 0.25s;
+}
+
+.box input[type="text"]:focus,.box input[type="password"]:focus{
+  width: 240px;
+  border-color: #2ecc71;
+
+}
+
+.box input[type="submit"]{
+  border: 0;
+  background: none;
+  display: block;
+  margin: 20px auto;
+  text-align: center;
+  border:2px solid #2ecc71;
+  padding: 14px 40px;
+  outline: none;
+  color: white;
+  border-radius: 24px;
+  transition: 0.25s;
+  cursor: pointer;
+}
+
+.box input[type="submit"]:hover{
+  background: #2ecc71;
+}
+
+.box input[type="email"]{
+  border: 0;
+  background: none;
+  display: block;
+  margin: 20px auto;
+  text-align: center;
+  border:2px solid #3498db;
+  padding: 14px 10px;
+  width:200px;
+  outline: none;
+  color: white;
+  border-radius: 24px;
+  transition: 0.25s;
+}
+.box input[type="email"]:focus{
+  width: 240px;
+  border-color: #2ecc71;
+
+}
+
+
+
+
+.defaultHero,
+.roomsHero {
+  min-height: calc(100vh - 66px);
+  background: url("./images/defaultBcg.jpeg") center/cover no-repeat;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+}
+.roomsHero {
+  background-image: url("./images/room-2.jpeg");
+  min-height: 60vh;
 }
 
-.App-link {
-  color: #61dafb;
+
+.banner {
+  display: inline-block;
+  background: rgba(0, 0, 0, 0.5);
+  color: var(--mainWhite);
+  padding: 2rem 1rem;
+  text-align: center;
+  text-transform: capitalize;
+  letter-spacing: var(--mainSpacing);
+}
+.banner h1 {
+  font-size: 2.5rem;
+}
+.banner div {
+  width: 10rem;
+  height: 5px;
+  background: var(--primaryColor);
+  margin: 1.7rem auto;
+}
+.banner p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+@media screen and (min-width: 576px) {
+  .banner {
+    padding: 2rem 3rem;
+  }
+  .banner h1 {
+    font-size: 3rem;
+  }
+}
+@media screen and (min-width: 992px) {
+  .banner {
+    padding: 2rem 6rem;
+  }
+  .banner h1 {
+    font-size: 4rem;
+  }
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}

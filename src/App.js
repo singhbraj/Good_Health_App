@@ -1,25 +1,44 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {Component } from 'react';
+import './App.css'
+import { Route, Link } from "react-router-dom";
+import Home from './components/Home';
+import Login from './components/Login';
+import Signup from './components/Signup';
+
+import Welcome from './components/Welcome'
+import User from './components/User'
+import "bootstrap/dist/css/bootstrap.min.css";
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <>
+     
+    <div className="container"> 
+    <nav className="navbar navbar-expand-lg navbar-light bg-light">
+     <Link to="/" className="navbar-brand">Home</Link>
+     <div className="collapse navbar-collapse">
+    <ul className="navbar-nav mr-auto">
+      <li className="nav-item ">
+        <Link to="/otp" className="nav-link">Login</Link>
+      </li>
+      <li className="nav-item">
+        <Link to="/signup" className="nav-link">Signup</Link>
+      </li>
+      </ul>
+      </div>
+
+    </nav>
+    
+    <Route path="/" exact component = {Home} />
+    <Route  exact path="/otp" component={Login} />
+    <Route  path="/signup" component={Signup} />
+    <Route path="/welcome" component={Welcome} />
+    <Route path="/user" component={User} />
+   
     </div>
+    
+   </>
   );
 }
 
